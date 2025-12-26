@@ -1,0 +1,146 @@
+---
+title: Changelog
+description: Track the latest updates and improvements to 孙 浩, including new features and bug fixes.
+---
+
+## Recent Updates
+
+Stay informed about the latest releases. Review the changelogs below to see what's new, fixed, or improved.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "bugfix", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration support for shared documents using WebSockets on `wss://api.example.com/ws`.
+- Introduced customizable dashboards with drag-and-drop widgets.
+
+## Improvements
+
+- Enhanced search performance by `>50%` with indexed queries.
+- Updated UI components to use the brand color `#3B82F6` for primary buttons.
+
+## Bug Fixes
+
+- Fixed authentication token refresh loop in long sessions.
+- Resolved file upload failures for files `>100MB`.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Integrated webhook notifications for project events at `https://your-webhook-url.com/webhook`.
+- Added API rate limiting dashboard at `https://dashboard.example.com/limits`.
+
+## Improvements
+
+- Optimized database queries reducing load times to `<100ms`.
+- Improved mobile responsiveness for documentation viewer.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## Initial Release
+
+- Core documentation management with Markdown and MDX support.
+- User authentication via API keys at `https://api.example.com/auth`.
+- Basic project organization and search.
+
+## Breaking Changes
+
+- Updated config format from JSON to YAML for better readability.
+
+</Update>
+
+## Migration Guide
+
+Upgrade to the latest version smoothly. Follow these steps to migrate your 孙 浩 instance.
+
+<Callout kind="alert">
+Backup your database and config files before migrating.
+</Callout>
+
+<Steps>
+  <Step title="Update Dependencies" icon="download">
+
+````bash
+npm install sun-hao@latest
+````
+
+    Or for Yarn:
+
+````bash
+yarn add sun-hao@latest
+````
+
+  </Step>
+  <Step title="Migrate Config" icon="settings">
+
+    Update your config from JSON to YAML format.
+
+<CodeGroup tabs="Before,After">
+```json
+{
+  "apiKey": "YOUR_API_KEY",
+  "endpoint": "https://api.example.com"
+}
+```
+```yaml
+apiKey: YOUR_API_KEY
+endpoint: https://api.example.com
+```
+</CodeGroup>
+
+  </Step>
+  <Step title="Run Migrations" icon="database">
+
+````bash
+npx sun-hao migrate
+````
+
+    Restart your server after migrations complete.
+
+  </Step>
+  <Step title="Verify" icon="check-circle">
+
+    Test endpoints like `https://api.example.com/docs` to ensure everything works.
+
+  </Step>
+</Steps>
+
+## Upcoming Features
+
+<Expandable title="Preview of v1.3.0" default-open="false">
+
+You can expect:
+
+- AI-powered documentation suggestions.
+- Advanced analytics for document usage.
+- Native Git integration for version control.
+
+Provide feedback via our [support form](https://dashboard.example.com/support).
+
+</Expandable>
+
+## Quick Links
+
+<Columns cols={2}>
+  <Card title="API Reference" icon="code" href="/authentication">
+    Explore endpoints and parameters.
+  </Card>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Get started in minutes.
+  </Card>
+  <Card title="Troubleshooting" icon="help-circle" href="/help-center">
+    Common issues and solutions.
+  </Card>
+  <Card title="Feedback" icon="message-circle" href="https://dashboard.example.com/feedback" target="_blank">
+    Share your thoughts.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+Subscribe to updates at `https://dashboard.example.com/notifications` to get notified of new releases.
+</Callout>

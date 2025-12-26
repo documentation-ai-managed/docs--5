@@ -1,0 +1,169 @@
+---
+title: Getting Started with 孙 浩
+description: Quickly set up your account and create your first documentation space to begin managing projects efficiently.
+---
+
+## Prerequisites
+
+Before you begin, ensure you have the following:
+
+<Callout kind="info">
+
+- A modern web browser (Chrome, Firefox, Safari, or Edge)
+- An email address for account verification
+- Optional: Project files ready (Markdown, images, or PDFs)
+
+</Callout>
+
+<Callout kind="tip">
+
+Sun 浩 free tier supports up to 5 documentation spaces. Upgrade for unlimited spaces and advanced features.
+
+</Callout>
+
+## Sign Up and Create Your Account
+
+Follow these steps to register and access the dashboard.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="globe">
+    Navigate to `https://dashboard.sunhao.com` and click **Sign Up**.
+  </Step>
+  <Step title="Enter Your Details" icon="user">
+    Provide your email, create a strong password, and complete the CAPTCHA.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for the verification link from `no-reply@sunhao.com` and click it.
+  </Step>
+  <Step title="Complete Onboarding" icon="check-circle">
+    Select your role (Developer, Manager, or Admin) and set your preferences.
+  </Step>
+</Steps>
+
+## Create Your First Documentation Space
+
+Organize your projects by creating dedicated spaces.
+
+<Steps>
+  <Step title="Access Spaces" icon="folder">
+    From the dashboard sidebar, click **New Space**.
+  </Step>
+  <Step title="Configure Space" icon="settings">
+    Enter a name like `My Project Docs`, add a description, and choose visibility (Private or Public).
+  </Step>
+  <Step title="Save and Enter" icon="save">
+    Click **Create**. You'll land in your new space dashboard.
+  </Step>
+</Steps>
+
+## Upload Initial Project Files
+
+Add your existing files to the space quickly.
+
+<Tabs>
+  <Tab title="Drag and Drop" icon="upload">
+    Open your space, drag files from your desktop into the **Files** section.
+
+    Supported formats: `.md`, `.mdx`, `.png`, `.pdf`, `.zip` (up to 50MB).
+
+    <Image
+      src="https://via.placeholder.com/800x400/3B82F6/white?text=Drag+Files+Here"
+      alt="Drag and drop files into the upload area"
+      width="800"
+      height="400"
+    />
+  </Tab>
+  <Tab title="API Upload" icon="code">
+    Use the upload API for automation.
+
+    <CodeGroup tabs="JavaScript,cURL">
+      ```javascript
+      const formData = new FormData();
+      formData.append('file', fileInput.files[0]);
+      formData.append('spaceId', 'your-space-id');
+
+      await fetch('https://api.sunhao.com/v1/files/upload', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${YOUR_API_KEY}`
+        },
+        body: formData
+      });
+      ```
+      ```bash
+      curl -X POST https://api.sunhao.com/v1/files/upload \
+        -H "Authorization: Bearer YOUR_API_KEY" \
+        -F "file=@/path/to/project.md" \
+        -F "spaceId=your-space-id"
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+## Basic Interface Tour
+
+Familiarize yourself with key areas using this overview.
+
+<Columns cols={3}>
+  <Card title="Sidebar Navigation" icon="menu" href="#sidebar">
+    Access Spaces, Files, Settings, and Search. Pin favorites for quick access.
+  </Card>
+  <Card title="Editor Workspace" icon="edit-3" href="#editor">
+    Real-time MDX editor with preview, syntax highlighting, and version history.
+  </Card>
+  <Card title="Preview Panel" icon="eye" href="#preview">
+    Live rendering of your docs with responsive design checks.
+  </Card>
+</Columns>
+
+## Create Your First Document
+
+Build a simple page to test the editor.
+
+<Steps>
+  <Step title="Start New Document" icon="plus">
+    In your space, click **New Document** and name it `introduction.mdx`.
+  </Step>
+  <Step title="Add Frontmatter" icon="file-text">
+    Insert YAML frontmatter for metadata.
+  </Step>
+  <Step title="Write Content" icon="pen-tool">
+    Add headings, lists, and components. Preview changes live.
+  </Step>
+  <Step title="Publish" icon="upload-cloud">
+    Click **Publish** to make it live. Share the generated URL.
+  </Step>
+</Steps>
+
+````mdx
+---
+title: My First Doc
+description: Welcome to Sun 浩
+---
+
+## Hello World
+
+This is your first document.
+
+- Feature 1
+- Feature 2
+````
+
+## Next Steps
+
+Explore advanced features to enhance your workflow.
+
+<Columns cols={2}>
+  <Card title="Customize Themes" icon="palette" href="/docs/configuration">
+    Apply your brand color `#3B82F6` and custom layouts.
+  </Card>
+  <Card title="Collaborate" icon="users" href="/docs/collaboration">
+    Invite team members and manage permissions.
+  </Card>
+</Columns>
+
+<Callout kind="success">
+
+Congratulations! You've set up 孙 浩 successfully. Dive into [collaboration features](/docs/collaboration) next.
+
+</Callout>
